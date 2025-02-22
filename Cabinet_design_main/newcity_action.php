@@ -1,0 +1,22 @@
+<?php
+include("headerr.html")
+?>
+<?php
+$name=$_POST["name"];
+$ghymat=$_POST["ghymat"];
+$id=$_POST["id"];
+$a=mysqli_connect("localhost","root","","site");
+$b=mysqli_query($a,"INSERT INTO `mdf`(`name`, `ghymat`, `id`) VALUES ('$name','$ghymat','$id');");
+mysqli_close($a);
+?>
+<?php
+if($b)
+{
+ ?>
+ <script>
+    location.replace("header5.php");
+ </script>   
+ <?php
+}else
+echo("خطا");
+?>
